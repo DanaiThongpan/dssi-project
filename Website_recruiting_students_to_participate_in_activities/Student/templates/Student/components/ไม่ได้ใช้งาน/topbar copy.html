@@ -1,0 +1,123 @@
+<div class="z-50 w-full flex fixed top-0 border border-gray-600 bg-gray-400 text-white">
+
+    <head class="w-full flex mt-2">
+      <div class="text-2xl w-2/4 flex mt-2 ml-10 justify-start items-center">
+  
+  
+          <div class="px-0 py-0 pt-1 flex">
+                  <a class="text-black hover:text-amber-400 hover:rounded-xlhover:border-2 py-1" href="/Student/">
+                          <div class="w-8 h-8 inline">
+                                  <img src="https://student.ubu.ac.th/assets/img/Ubu_logo.png" alt="" width="50" height="50">
+                          </div>        
+                  </a>
+                  <div class="px-2 pt-4 flex text-lg font-bold text-black">
+                          ระบบรับสมัครนักศึกษาเข้าร่วมกิจกรรม<br>
+                  </div> 
+          </div>
+      </div>
+      <div class="w-2/4 align-baseline mt-2 pt-2 ">
+        <div class="invisible md:visible flex justify-around align-baseline">
+   
+        </div>
+      </div>
+      <div class="w-1/4 flex my-2 mr-10 justify-end">
+        <span class="mx-2 py-3 pt-6">
+          <div class="relative inline-block text-left">
+                  <button id="dropdownButton1" type="button">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"  
+                                  class="lucide lucide-bell-ring">
+                                  <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+                                  <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+                                  <path d="M4 2C2.8 3.7 2 5.7 2 8"/>
+                                  <path d="M22 8c0-2.3-.8-4.3-2-6"/>
+                          </svg>
+                  </button>
+                  <div id="dropdownMenu1" class="w-aoto h-aoto hidden absolute right-0 mt-2 origin-top-right rounded-md shadow-lg z-50 min-w-[200px] text-left">
+                          <div class="py-1 bg-white border rounded-md shadow-xs">
+                              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">แจ้งเตือน</a>
+                              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">แจ้งเตือน</a>
+                              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">แจ้งเตือน</a>
+                              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">แจ้งเตือน</a>
+                              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">แจ้งเตือน</a>
+                          </div>
+                      </div>
+                  </div>
+                  <script>
+                          document.addEventListener('DOMContentLoaded', function () {
+                                  const dropdownButton = document.getElementById('dropdownButton1');
+                                  const dropdownMenu = document.getElementById('dropdownMenu1');
+          
+                                  dropdownButton.addEventListener('click', function () {
+                                          dropdownMenu.classList.toggle('hidden');
+                                  });
+          
+                          document.addEventListener('click', function (event) {
+                                  if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                                  dropdownMenu.classList.add('hidden');
+                                          }
+                                  });
+                          });
+                  </script>
+        </span>
+        <span class="mx-3 py-4 pt-6">
+                {% if user.is_staff %}
+                Hi เจ้าหน้าที่ {{ user.username }}
+                {% elif user.is_person_responsible_for_the_project %}
+                Hi ผู้รับผิดชอบโครงการ {{user.username}} {{ user.first_name }}
+                {% elif user.is_recruitment_announcer %}
+                Hi ผู้ประกาศ {{user.username}} {{ user.first_name }}
+                {% elif user.is_student %}
+                {{user.username}} {{ user.first_name }} {{ user.last_name }}
+                {% endif %}
+        </span>
+        <span class="mx-2 py-2 pt-5">
+          <div class="relative inline-block text-left">
+                  <button id="dropdownButton2" type="button">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                  class="w-8 h-8">
+                                  <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                  </button>
+          <div id="dropdownMenu2" class="w-aoto h-aoto hidden absolute right-0 mt-2 origin-top-right rounded-md shadow-lg z-50 min-w-[200px] text-left">
+                <div class="py-1 bg-white border rounded-md shadow-xs">
+                      <a href="/Student/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">หน้าแรก</a>
+                      <a href="updateprofileStudent/{{ i.id }}/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">แก้ไขข้อมูลส่วนตัว</a>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">แก้ไขข้อมูลความสามารถ</a>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">ประวัติการเข้าร่วมกิจกรรม</a>
+                      <a href="{% url 'logout' %}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">ออกจากระบบ</a>
+                </div>
+              </div>
+          </div>
+          <script>
+                  document.addEventListener('DOMContentLoaded', function () {
+                          const dropdownButton = document.getElementById('dropdownButton2');
+                          const dropdownMenu = document.getElementById('dropdownMenu2');
+  
+                          dropdownButton.addEventListener('click', function () {
+                                  dropdownMenu.classList.toggle('hidden');
+                          });
+  
+                  document.addEventListener('click', function (event) {
+                          if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                          dropdownMenu.classList.add('hidden');
+                                  }
+                          });
+                  });
+          </script>
+        </span>
+      </div>
+    </head>
+    <div class="px-5 fixed font-bold text-black pt-3 mt-20 w-full h-aoto left-aoto absolute top-aoto border border-gray-600 bg-gray-400 shadow-md">
+          รายละเอียดประกาศรับสมัคร<br>
+          <div class="px-5">
+                <br>
+              <!-- คณะ : <input type="text" name="" id=""> 
+              เดือน : <input type="text" name="" id=""> 
+              ปี : <input type="text" name="" id="">
+              <button class="bg-transparent hover:bg-[#DDDDDD] text-black font-semibold hover:text-white py-0 px-4 border border-gray-300 hover:border-transparent rounded" type="submit">ดูกิจกรรมในเดือนที่เลือก</button><br> -->
+          </div>
+          <br>
+      </div>
+  </div>     

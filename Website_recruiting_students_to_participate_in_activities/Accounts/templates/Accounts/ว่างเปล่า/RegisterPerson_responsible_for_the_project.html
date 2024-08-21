@@ -1,0 +1,26 @@
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center h-screen">
+    <div class="static w-96 h-aoto flex flex-col mx-auto p-3 border border-gray-600 shadow-md">
+    <form action="" method="post">
+    <h1 class="text-center">Person_responsible_for_the_project</h1>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="text-center">
+        <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 focus:outline-none focus:shadow-outline">ลงทะเบียน</button><br>
+    </div>
+        {% for i in db %}
+        {{i}}<br>
+        {% endfor %}
+    </form>
+    </div>
+</body>
+</html>

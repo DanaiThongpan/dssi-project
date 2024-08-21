@@ -1,0 +1,110 @@
+{% load crispy_forms_tags %}
+<div class="w-full pt-0">
+    <div class="static w-full h-20 flex flex-col mx-auto p-3  shadow-md">
+      </div>
+  <body class="w-full pt-0">
+    <div class="container mx-auto p-4">
+        <form action="" method="post" enctype="multipart/form-data">
+            <table class="w-full table-auto">
+                {% csrf_token %}
+                {{ form|crispy }}
+   
+                <!-- {{ form | crispy }}
+                    {% if form.img_activity %}
+                    <th class="border px-2 py-3 invisible md:visible flex justify-around">
+                        <img src="{{i.img_activity.url}}" alt="media/activity/images" width="170" height="170">
+                    </th>
+                    {% endif %} -->
+                <!-- <thead>
+                    {% if i.img_activity %}
+                    <label for="img_activity">Image:</label>
+                    <img src="{{i.img_activity.url}}" alt="media/activity/images" width="170" height="170">
+                    <input type="file" name="img_activity" id="img_activity" value="{{i.img_activity.url}}">
+                    <br>
+                    {% endif %}
+            
+                    <label for="activity_name">Activity Name:</label>
+                    <input type="text" name="activity_name" id="activity_name" value="{{ i.activity_name }}">
+                    <br>
+            
+                    <label for="activity_type">Activity Type:</label>
+                    <input type="text" name="activity_type" id="activity_type" value="{{ i.activity_type }}">
+                    <br>
+            
+                    <label for="start_date_create_activity">Start Date (Create Activity):</label>
+                    <input type="date" name="start_date_create_activity" id="start_date_create_activity" value="{{ i.start_date_create_activity }}">
+                    <br>
+            
+                    <label for="due_date_create_activity">Due Date (Create Activity):</label>
+                    <input type="date" name="due_date_create_activity" id="due_date_create_activity" value="{{ i.due_date_create_activity }}">
+                    <br>
+            
+                    <label for="target_number">Target Number:</label>
+                    <input type="number" name="target_number" id="target_number" value="{{ i.target_number }}">
+                    <br>
+            
+                    <label for="place">Place:</label>
+                    <input type="text" name="place" id="place" value="{{ i.place }}">
+                    <br>
+            
+                    <label for="start_date_activity">Start Date (Activity):</label>
+                    <input type="date" name="start_date_activity" id="start_date_activity" value="{{ i.start_date_activity }}">
+                    <br>
+            
+                    <label for="due_date_activity">Due Date (Activity):</label>
+                    <input type="date" name="due_date_activity" id="due_date_activity" value="{{ i.due_date_activity }}">
+                    <br>
+            
+                    <label for="person_responsible_project">Person Responsible for the Project:</label>
+                    <input type="text" name="person_responsible_project" id="person_responsible_project" value="{{ i.person_responsible_project }}">
+                    <br>
+            
+                    <label for="project_consultant">Project Consultant:</label>
+                    <input type="text" name="project_consultant" id="project_consultant" value="{{ i.project_consultant }}">
+                    <br>
+            
+                    <label for="description">Description:</label>
+                    <input type="text" name="description" id="description" value="{{ i.description }}">
+                    <br> -->
+                    <!-- {% if form.img_activity %}
+                    <th class="border px-2 py-3 invisible md:visible flex justify-around">
+                        <img src="{{i.img_activity.url}}" alt="media/activity/images" width="170" height="170">
+                    </th>
+                    {% endif %}
+                    <input type="file" name="img_activity" accept="image/*" id="img_activity"> -->
+                    <!-- <td class="border px-4 py-3">ชื่อกิจกรรม : {{form.activity_name}}<br>
+                    <br>
+                    ด้านที่ : {{form.activity_type}}<br>
+                    <br>
+                    วันที่เปิดรับสมัคร : {{form.start_date_create_activity}} - {{form.due_date_create_activity}}<br>
+                    <br>
+                    จำนวนเป้าหมาย : {{form.target_number}}<br>
+                    </td>
+                </thead>
+            </table>
+            <table class="w-full table-auto">
+                <thead> -->
+                    <!-- <label for="start_date_activity" id="start_date_activity">
+                        <input datepicker type="text" name="start_date_activity" value="{{form.instance.start_date_activity}}">
+                    </label> -->
+                    <!-- <td class="border px-4 py-3">
+                        สถานที่จัดกิจกรรม : {{form.place}}<br>
+                        <br>
+                        วันที่จัดกิจกรรม : {{form.start_date_activity}} - {{form.due_date_activity}}<br>
+                        <br>
+                        ผู้รับผิดชอบโครงการ : {{form.person_responsible_project}}<br>
+                        <br>
+                        ที่ปรึกษาโครงการ : {{form.project_consultant}}<br>
+                        <br>
+                        คำอธิบาย : {{form.description}}<br>
+                        <br> -->
+                        <button type="submit" class="bg-cyan-100 px-6 py-2 round-md drop-shadow-md">
+                            บันทึกการแก้ไข
+                        </button>
+                    </td>
+                </thead>
+            </table>
+        </form>
+    </div>
+  </body>
+  </html>

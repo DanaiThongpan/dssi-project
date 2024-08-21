@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบรับสมัครนักศึกษาเข้าร่วมกิจกรรม</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans">
+    <header class="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-white shadow-md z-50">
+        <div class="flex items-center">
+            <img src="https://training.ubu.ac.th/assets/img/ubu_logo.png" alt="UBU Logo" class="w-10 h-10 mr-3">
+            <h2 class="text-xl font-bold">ระบบรับสมัครนักศึกษาเข้าร่วมกิจกรรม</h2>
+        </div>
+        <nav class="space-x-6">
+            <a href="/" class="text-black-600 font-bold hover:text-blue-900">หน้าแรก</a>
+            <a href="/login" class="text-black-600 font-bold hover:text-blue-900">เข้าสู่ระบบ</a>
+            <a href="#" class="text-black-600 font-bold hover:text-blue-900">สมัครสมาชิก</a>
+        </nav>
+    </header>
+    <main class="flex justify-between items-center px-12 py-16">
+        <div class="max-w-2xl">
+            <h1 class="text-4xl font-bold mb-4">ระบบจัดการการเข้าร่วมกิจกรรม มหาวิทยาลัยอุบลราชธานี</h1>
+            <h2 class="text-2xl text-gray-600">- ระบบรับสมัครนักศึกษาเข้าร่วมกิจกรรม</h2>
+        </div>
+        <div class="max-w-xl">
+            <img src="https://training.ubu.ac.th/assets/img/hero-img.png" alt="Training Illustration" class="w-full h-auto animate-float">
+        </div>
+    </main>
+    <footer class="bg-blue-300 text-white text-center py-4 mt-8">
+        <p>© ระบบรับสมัครนักศึกษาเข้าร่วมกิจกรรม</p>
+    </footer>
+</body>
+</html>
